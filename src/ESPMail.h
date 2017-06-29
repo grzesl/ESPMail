@@ -69,7 +69,9 @@ public:
 		const char* errmsg;
 		if ((errmsg = quickmail_send(mailobj, smtpServer, smtpPort, smtpUser, smtpPass)) != NULL)
 		{
-			Serial.printf("Error sending e-mail: %s\n", errmsg);
+			Serial.print("Error sending e-mail: ");
+			Serial.print(errmsg);
+			Serial.print("\n");
 			res = 1;
 		}
 		quickmail_destroy(mailobj);		

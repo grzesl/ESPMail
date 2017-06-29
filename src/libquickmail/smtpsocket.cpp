@@ -299,7 +299,9 @@ int socket_smtp_command(SOCKET sock, FILE* debuglog, const char* templ, ...)
 		//log command to send
 		if (debuglog)
 #ifdef ARDUINO
-			Serial.printf("SMTP> %s\n", cmd);
+			Serial.print("SMTP> ");
+			Serial.print(cmd);
+			Serial.print("\n");
 #else
 			fprintf(debuglog, "SMTP> %s\n", cmd);
 #endif
@@ -321,7 +323,11 @@ int socket_smtp_command(SOCKET sock, FILE* debuglog, const char* templ, ...)
 	statuscode = socket_get_smtp_code(sock, &message);
 	if (debuglog)
 #ifdef ARDUINO
-		Serial.printf("SMTP< %i %s\n", statuscode, (message ? message : ""));
+		Serial.print("SMTP< ");
+		Serial.print(statuscode);
+		Serial.print(" ");
+		Serial.print((message ? message : ""));
+		Serial.print("\n");
 #else
 		fprintf(debuglog, "SMTP< %i %s\n", statuscode, (message ? message : ""));
 #endif
