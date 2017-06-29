@@ -1,0 +1,32 @@
+#######################################
+# Syntax Coloring Map For ESPMail
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+ESPMail	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+enableDebugMode	KEYWORD2
+setTitle	KEYWORD2
+addTo	KEYWORD2
+addCC	KEYWORD2
+setBody	KEYWORD2
+send	KEYWORD2
+~ESPMail	KEYWORD2
+
+#######################################
+# Instances (KEYWORD3)
+#######################################
+
+mail	KEYWORD3
+
+#######################################
+# Constants (LITERAL1)
+#######################################
