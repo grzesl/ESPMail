@@ -42,8 +42,6 @@ SOCKET socket_open (const char* smtpserver, unsigned int smtpport, char** errmsg
 	WiFiClient *cli = new WiFiClient();
 	SOCKET	sock = (void*)cli;
 
-	Serial.println("socket_open");
-
 	if (cli->connect(smtpserver, smtpport) == 0)
 	{
 		*errmsg = "Error connecting to SMTP server";
