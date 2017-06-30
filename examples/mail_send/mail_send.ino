@@ -52,6 +52,13 @@ void loop() {
 	//mail.setHTMLBody("This is an example html <b>e-mail<b/>.\n<u>Regards Grzesiek</u>");
 	
 	//mail.enableDebugMode();
+	
+	Serial.print("\n\nESPMail ver:");
+	Serial.println(mail.getVersion());
+	Serial.print("Mail subject:");
+	Serial.println(mail.getSubject());
+	Serial.print("\n\n");
+
 	if (mail.send("smtp.server.com", 587, "your_smtp_user", "your_smtp_password") == 0)
 	{
 		Serial.println("Mail send OK");

@@ -98,6 +98,31 @@ public:
 		return res;
 	}
 
+	char* getSubject()
+	{
+		return (char*)quickmail_get_subject(mailobj);
+	}
+
+	char* getFrom()
+	{
+		return (char*)quickmail_get_from(mailobj);
+	}
+
+	char* getBody()
+	{
+		return quickmail_get_body(mailobj);
+	}
+
+	char* getVersionQuickMail()
+	{
+		return (char*)quickmail_get_version();
+	}
+
+	char* getVersion()
+	{
+		return "1.0.2";
+	}
+
 	~ESPMail()
 	{
 		quickmail_cleanup();
