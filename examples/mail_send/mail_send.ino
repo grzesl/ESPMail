@@ -43,7 +43,14 @@ void loop() {
 
 	mail.setSubject("from@example.com", "EMail Subject");
 	mail.addTo("to@example.com");
-	mail.setBody("Hello world");
+	mail.addCC("cc@example.com");
+	mail.addBCC("bcc@example.com");
+	
+	mail.addAttachment("test.txt", "This is content of attachment.");
+	
+	mail.setBody("This is an example e-mail.\nRegards Grzesiek");
+	//mail.setHTMLBody("This is an example html <b>e-mail<b/>.\n<u>Regards Grzesiek</u>");
+	
 	//mail.enableDebugMode();
 	if (mail.send("smtp.server.com", 587, "your_smtp_user", "your_smtp_password") == 0)
 	{

@@ -58,9 +58,29 @@ public:
 		quickmail_add_cc(mailobj, cc);
 	}
 
+	void addBCC(char *cc)
+	{
+		quickmail_add_bcc(mailobj, cc);
+	}
+
 	void setBody(char *body)
 	{
 		quickmail_set_body(mailobj, body);
+	}
+
+	void addBody(char* data)
+	{
+		quickmail_add_body_memory(mailobj, NULL, data, strlen(data), 0);
+	}
+
+	void setHTMLBody(char* data)
+	{
+		quickmail_add_body_memory(mailobj, "text/html", data, strlen(data), 0);
+	}
+
+	void addAttachment(const char* filename, char* data)
+	{
+		quickmail_add_attachment_memory(mailobj, filename, NULL, data, strlen(data), 0);
 	}
 
 	int send(char *smtpServer, int smtpPort, char *smtpUser, char *smtpPass )
@@ -82,8 +102,6 @@ public:
 	{
 		quickmail_cleanup();
 	}
-
-
 
 private:
 	quickmail mailobj;
