@@ -25,7 +25,7 @@ along with ESPMail.  If not, see <http://www.gnu.org/licenses/>.
 #if defined(ARDUINO_ARCH_AVR) || defined(ARDUINO_ARCH_ESP8266) || defined(ARDUINO_ARCH_SAMD) || defined(ARDUINO_ARCH_SAM)
 #include "Arduino.h"
 #include <Client.h>
-#include "libquickmail\quickmail.h"
+#include "libquickmail/quickmail.h"
 #else
 #error Only Arduino MKR1000, Yun, Uno/Mega/Due with either WiFi101 or Ethernet shield. ESP8266 also supported.
 #endif
